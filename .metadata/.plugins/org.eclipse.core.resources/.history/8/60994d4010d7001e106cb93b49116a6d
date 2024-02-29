@@ -1,0 +1,40 @@
+package com.bitwise.blog.payloads;
+
+public class ApiResponse {
+
+	
+	private String message;
+	private boolean success;
+	private String hindiReason;
+	
+	public String getHindiReason() {
+		return hindiReason;
+	}
+	public void setHindiReason(String hindiReason) {
+		this.hindiReason = hindiReason;
+	}
+	public String getMessage() {
+		return message;
+	}
+	public void setMessage(String message) {
+		this.message = message;
+	}
+	public boolean isSuccess() {
+		return success;
+	}
+	public void setSuccess(boolean success) {
+		this.success = success;
+	}
+	public ApiResponse() {
+		super();
+	}
+	public ApiResponse(String message, boolean success , String hindiReason) {
+		super();
+		this.message = message;
+		this.success = success;
+		this.hindiReason =hindiReason;
+	}
+
+
+
+}

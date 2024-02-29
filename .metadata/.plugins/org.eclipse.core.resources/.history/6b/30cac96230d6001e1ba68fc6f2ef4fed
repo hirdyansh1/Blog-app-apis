@@ -1,0 +1,5 @@
+package com.bitwise.blog.repositories;
+
+public interface IUserRepository {
+
+}

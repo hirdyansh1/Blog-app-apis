@@ -1,0 +1,5 @@
+package com.bitwise.blog.services;
+
+public interface IUserService {
+
+}

@@ -1,0 +1,51 @@
+package com.bitwise.blog.services;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.bitwise.blog.entities.User;
+import com.bitwise.blog.exceptions.ResourceNotFoundException;
+import com.bitwise.blog.repositories.IUserRepository;
+
+public class UserServiceImpl implements IUserService {
+
+	
+	private IUserRepository userRepo;
+	
+	@Autowired
+	public UserServiceImpl(IUserRepository userRepo) {
+		
+		this.userRepo = userRepo;
+	}
+
+	@Override
+	public User createUser(User user) {
+		return userRepo.save(user);
+	}
+
+	@Override
+	public User updateUser(User user, Integer userId) {
+		 
+		return userRepo.findById(userId).orElseThrow(()-> new ResourceNotFoundException("User" , "id" , userId));
+	}
+	@Override
+	public User getuserById(Integer user_id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<User> getAllUsers() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteUser(Integer user_id) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

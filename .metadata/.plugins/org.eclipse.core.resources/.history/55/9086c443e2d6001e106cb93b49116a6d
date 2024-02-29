@@ -1,0 +1,11 @@
+package com.bitwise.blog.exceptions;
+
+public class ResourceNotFoundException extends RuntimeException {
+	
+	String resourcename;
+	String fieldName;
+	String fieldvalue;
+	
+	
+
+}

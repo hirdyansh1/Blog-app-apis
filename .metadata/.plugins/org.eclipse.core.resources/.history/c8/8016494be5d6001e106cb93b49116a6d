@@ -1,0 +1,60 @@
+package com.bitwise.blog.services;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.bitwise.blog.entities.User;
+import com.bitwise.blog.exceptions.ResourceNotFoundException;
+import com.bitwise.blog.repositories.IUserRepository;
+
+public class UserServiceImpl implements IUserService {
+
+	
+	private IUserRepository userRepo;
+	
+	@Autowired
+	public UserServiceImpl(IUserRepository userRepo) {
+		
+		this.userRepo = userRepo;
+	}
+
+	@Override
+	public User createUser(User user) {
+		return userRepo.save(user);
+	}
+
+	@Override
+	public User updateUser(User user, Integer user_id) {
+		 
+		User theuser =userRepo.findById(user_id)
+			.orElseThrow(()-> new ResourceNotFoundException("User" , "Id" , user_id));
+	
+		theuser.setName(user.getName());
+		theuser.setEmail(user.getEmail());
+		theuser.setPassword(user.getPassword());
+		theuser.setAbout(user.getAbout());
+		return userRepo.save(theuser);
+		
+	}
+	@Override
+	public User getuserById(Integer user_id) {
+		
+		User theuser = userRepo.findById(user_id)
+				.orElseThrow(()-> new ResourceNotFoundException("User" , "Id" , user_id));
+		return theuser;
+	}
+
+	@Override
+	public List<User> getAllUsers() {
+		return userRepo.findAll();
+	}
+
+	@Override
+	public void deleteUser(Integer user_id) {
+		User theuser = userRepo.findById(user_id).orElseThrow(()-> new ResourceNotFoundException("User" , "Id" , user_id));
+		userRepo.delete(theuser);
+	}
+
+}

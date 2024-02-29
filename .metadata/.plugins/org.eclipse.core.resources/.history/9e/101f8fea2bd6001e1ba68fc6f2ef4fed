@@ -1,0 +1,6 @@
+server.port=8081
+
+#db configuration
+spring.datasource.url = jdbc:mysql://54.177.15.187//blog_app_apis
+spring.datasource.username= hirdyansh
+spring.datasource.password= password

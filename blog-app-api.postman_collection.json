@@ -1,0 +1,73 @@
+{
+	"info": {
+		"_postman_id": "804bf73d-81b4-46be-90ad-d7c78cf07659",
+		"name": "blog-app-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "31530196"
+	},
+	"item": [
+		{
+			"name": "Create user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n\"name\" : \"Hirdyansh Tiwari  \",\r\n\"email\" : \"HT@gmail.com\",\r\n\"password\" : \"bcd\",\r\n\"about\" : \"I am a Bitwiser\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:9093/api/users/"
+			},
+			"response": []
+		},
+		{
+			"name": "get single user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:9093/api/users/2"
+			},
+			"response": []
+		},
+		{
+			"name": "get users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:9093/api/users/"
+			},
+			"response": []
+		},
+		{
+			"name": "update users",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n\"name\" : \"Karan singh\",\r\n\"email\" : \"KS@gmail.com\",\r\n\"password\" : \"bcd\",\r\n\"about\" : \"I am from Odisa\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:9093/api/users/4"
+			},
+			"response": []
+		},
+		{
+			"name": "delete user",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:9093/api/users/3"
+			},
+			"response": []
+		}
+	]
+}

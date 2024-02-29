@@ -1,0 +1,16 @@
+package com.bitwise.blog.services;
+
+
+import java.util.List;
+
+import com.bitwise.blog.payloads.UserDto;
+
+public interface IUserService {
+	
+	UserDto createUser(UserDto user);
+	UserDto updateUser(UserDto user , Integer userId);
+	UserDto getuserById(Integer user_id);
+	List<UserDto> getAllUsers();
+	void deleteUser(Integer user_id);
+
+}
